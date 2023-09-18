@@ -28,6 +28,7 @@ pip install -r requirements_cpu.txt
 │   ├── pangu_weather_6.onnx
 │   ├── pangu_weather_24.onnx
 │   ├── moudles
+│   |  ├── __init__.py
 │   |  ├── era5_download.py
 │   |  ├── inference_session.py
 │   |  ├── npy_to_nc.py
