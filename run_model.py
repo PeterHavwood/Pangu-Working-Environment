@@ -13,7 +13,7 @@ from parameters import (
 print("=== Downloading the ERA5 data ===")
 input_upper_ncfile_name, input_surface_ncfile_name = get_input_npy(input_time, input_data_dir)
 print("\n=== Ploting the figures of the input data ===")
-plot_surf_wind_temp(input_surface_ncfile_name, extent, t2m_levels, input_data_dir, 0, 'figure')
+plot_surface_wind_temp(input_surface_ncfile_name, extent, t2m_levels, input_data_dir, 0, 'figure')
 
 # Initialize onnxruntime session for Pangu-Weather Models
 print("\n=== Initialize onnxruntime session for Pangu-Weather Models ===")
@@ -31,7 +31,7 @@ if forecast_times > 1:
             run_sessions(input_data_dir, output_data_dir, intermediate_time, ort_sessions, single_forecast_hour, single_forecast_hour*(i+1), True, i+1)
         # Plot the results
         print("\n=== Ploting the figures ===")
-        plot_surf_wind_temp(output_surface_ncfile_name, extent, t2m_levels, output_data_dir, single_forecast_hour*(i+1),'figure')
+        plot_surface_wind_temp(output_surface_ncfile_name, extent, t2m_levels, output_data_dir, single_forecast_hour*(i+1),'figure')
 else:
     # Run the sessions
     print(f"\n=== Running the inference sessions to forecast ===")
