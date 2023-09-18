@@ -6,7 +6,7 @@ This environment can download the input data, run the models for a given time or
 The official repository of Pangu-Weather model is: https://github.com/198808xc/Pangu-Weather/tree/main
 
 ## Installation
-**First** download Pangu models (Then 4 links below are from the official repository of Pangu-Weather model).
+**First** download Pangu models (The 4 links below are from the official repository of Pangu-Weather model).
 
 * The 1-hour model (pangu_weather_1.onnx): [Google drive](https://drive.google.com/file/d/1fg5jkiN_5dHzKb-5H9Aw4MOmfILmeY-S/view?usp=share_link)/[Baidu netdisk](https://pan.baidu.com/s/1M7SAigVsCSH8hpw6DE8TDQ?pwd=ie0h)
 
