@@ -54,5 +54,5 @@ You can find the output data of netCDF format in the directory `/data/output_dat
 
 ## Further Expand
 * Add a python program only to plot the resuls.
-* Add more plot functions
-* Fix any bug
+* Add more plot functions.
+* Fix any bug.
