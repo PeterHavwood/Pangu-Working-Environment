@@ -6,6 +6,7 @@ import onnxruntime as ort
 
 from moudles.work_time import calculate_work_times
 from moudles.npy_to_nc import npy2nc_surface, npy2nc_upper
+from moudles.name_file import name_output_upper_ncfile, name_output_surface_ncfile
 
 # As there are many variables have 'time' in their names with different meaning
 # We use different spelling ways to distinguish them
@@ -74,10 +75,8 @@ def run_sessions(input_data_dir, output_data_dir, output_TIME, program_start_Tim
     np.save(os.path.join(output_data_dir, 'output_surface.npy'), output_surface)
 
     # Transform the format of results from numpy to netCDF
-    output_year, output_month, output_day, output_hour = output_TIME.year, output_TIME.month, output_TIME.day, output_TIME.hour
-
-    output_upper_ncfile_name = f'output_{total_forecast_hour}_upper_'+str(output_year).zfill(4)+str(output_month).zfill(2)+str(output_day).zfill(2)+str(output_hour).zfill(2)+'.nc'
-    output_surface_ncfile_name = f'output_{total_forecast_hour}_surface_'+str(output_year).zfill(4)+str(output_month).zfill(2)+str(output_day).zfill(2)+str(output_hour).zfill(2)+'.nc'
+    output_upper_ncfile_name = name_output_upper_ncfile(output_TIME, total_forecast_hour)
+    output_surface_ncfile_name = name_output_surface_ncfile(output_TIME, total_forecast_hour)
 
     output_TIME_nc = nc.date2num(output_TIME, "hours since 1900-01-01 00:00:00.0")
     npy2nc_upper(output_upper, output_TIME_nc, output_upper_ncfile_name, output_data_dir)

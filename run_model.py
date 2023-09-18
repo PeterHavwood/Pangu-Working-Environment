@@ -36,8 +36,8 @@ if forecast_times > 1:
     # Iterate to forcast
     for i in range(forecast_times):
         # Run the sessions
-        intermediate_TIME = intermediate_TIME + datetime.timedelta(hours=single_forecast_hour)
         print(f"\n=== Running the inference sessions to forecast (iteration): {i+1}/{forecast_times} || Forecast time: {intermediate_TIME} ===")
+        intermediate_TIME = intermediate_TIME + datetime.timedelta(hours=single_forecast_hour)
         output_upper_ncfile_name, output_surface_ncfile_name = \
             run_sessions(input_data_dir, output_data_dir, intermediate_TIME, program_start_Time, ort_sessions, single_forecast_hour, single_forecast_hour*(i+1), True, i+1)
         # Plot the results
@@ -46,8 +46,9 @@ if forecast_times > 1:
 else:
     # Run the sessions
     print(f"\n=== Running the inference session to forecast ===")
+    output_TIME = input_TIME + datetime.timedelta(hours=single_forecast_hour)
     output_upper_ncfile_name, output_surface_ncfile_name = \
-        run_sessions(input_data_dir, output_data_dir, input_TIME, program_start_Time, ort_sessions, single_forecast_hour, single_forecast_hour, False)
+        run_sessions(input_data_dir, output_data_dir, output_TIME, program_start_Time, ort_sessions, single_forecast_hour, single_forecast_hour, False)
     # Plot the results
     print("\n=== Ploting the figures ===")
     plot_surface_wind_temp(output_surface_ncfile_name, extent, t2m_levels, output_data_dir, single_forecast_hour,  figure_dir)

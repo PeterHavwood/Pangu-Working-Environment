@@ -8,7 +8,7 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 from cartopy.mpl.ticker import LongitudeFormatter, LatitudeFormatter
 
-def plot_surface_wind_temp(surface_ncfile_name, extent, t2m_levels, data_path, forecast_TIME, save_path):
+def plot_surface_wind_temp(surface_ncfile_name, extent, t2m_levels, data_path, save_path, forecast_TIME=0):
     # Import the data, sort by latitude and choose the range
     surface_ncfile = os.path.join(data_path, surface_ncfile_name)
     surface_data, file_TIME = process_surface_data(surface_ncfile, extent)

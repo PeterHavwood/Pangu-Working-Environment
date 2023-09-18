@@ -12,7 +12,7 @@ input_TIME = datetime.datetime(year,month,day,hour)
 
 # Time to forecast in hour
 single_forecast_hour = 6
-forecast_times = 12
+forecast_times = 5
 
 # Extent to plot
 lon_west = 110
@@ -28,7 +28,7 @@ t2m_levels = np.linspace(0, 40, 21)
 # The directory of data and figures
 input_data_dir = './data/input_data'
 output_data_dir = './data/output_data'
-figure_dir = './figure/Lekima_19'
+figure_dir = './figure'
 
 # Options of  onnxruntime
 ort_options = ort.SessionOptions()
