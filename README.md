@@ -53,6 +53,6 @@ python run_model.py
 You can find the output data of netCDF format in the directory `/data/output_data` (you can create your own dirt to save these data), and figures in `/figure` (you can change it as well).
 
 ## Further Expand
-* Add a python program only to plot the resuls.
+* Add a python program only to plot the results.
 * Add more plot functions.
 * Fix any bug.
