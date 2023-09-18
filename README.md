@@ -17,7 +17,7 @@ The official repository of Pangu-Weather model is: https://github.com/198808xc/P
 * The 24-hour model (pangu_weather_24.onnx): [Google drive](https://drive.google.com/file/d/1lweQlxcn9fG0zKNW8ne1Khr9ehRTI6HP/view?usp=share_link)/[Baidu netdisk](https://pan.baidu.com/s/179q2gkz2BrsOR6g3yfTVQg?pwd=eajy)
 
 
-**Then** you shall download files from this repository, and organize them with the onnx models as the following hierarchy:
+**Then** download files from this repository, and organize them with the onnx models as the following hierarchy:
 
 ```plain
 ├── root
@@ -59,7 +59,7 @@ You can find the output data of netCDF format in the directory `/data/output_dat
 
 ## Code Explaination
 #### Other
-As there are many variables have 'time' in their names with different meaning, we use different spelling ways to distinguish them:
+As there are many variables have 'time' in their names with different meanings, we use different spelling ways to distinguish them:
 * TIME: the time of the data in reality, like 'input_TIME = 2019.09.01 00:00'
 * Time: the time to record how long the program/function has run, like 'program_run_Time = 5min'
 * time: the number of times that models should/have run, like 'work_times = 4'
