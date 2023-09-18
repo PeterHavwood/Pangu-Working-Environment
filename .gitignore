@@ -4,3 +4,5 @@ pangu_weather_6.onnx
 pangu_weather_24.onnx
 /data
 /figure
+test_*
+2023-*

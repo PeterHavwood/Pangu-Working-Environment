@@ -19,7 +19,7 @@ def get_hourly_upper_npy(year, month, day, hour, save_path):
     if os.path.isfile(ncfile):
         print("The input upper netCDF data already exists. No need to download.")
     else:
-        print("Downloading the input upper netCDF data.:")
+        print("Downloading the input upper netCDF data:")
         download_hourly_upper_nc(year, month, day, hour, save_path)
     
     # Get variables in nc file
@@ -43,7 +43,7 @@ def get_hourly_surface_npy(year, month, day, hour, save_path):
     if os.path.isfile(ncfile):
         print("The input surface netCDF data already exists. No need to download.")
     else:
-        print("Downloading the input surface netCDF data.:")
+        print("Downloading the input surface netCDF data:")
         download_hourly_surface_nc(year, month, day, hour, save_path)
     
     # Get variables in nc file

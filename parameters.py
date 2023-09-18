@@ -4,29 +4,31 @@ import numpy as np
 
 # Inital time
 year = 2023
-month = 8
-day = 25
-hour = 23
+month = 9
+day = 11
+hour = 0
 
 input_time = datetime.datetime(year,month,day,hour)
 
 # Time to forecast in hour
-forecast_time = 24*7
+single_forecast_hour = 24
+forecast_times = 8
 
 # Extent to plot
-lon_west = 100
+lon_west = 70
 lon_east = 150
 lat_south = 10
-lat_north = 50
+lat_north = 60
 
 extent = [lon_west, lon_east, lat_south, lat_north]
 
 # Temperature levels
 t2m_levels = np.linspace(0, 40, 21)
 
-# The directory of the input and output data
+# The directory of data and figures
 input_data_dir = './data/input_data'
 output_data_dir = './data/output_data'
+figure_dir = './figure/test_9_11'
 
 # Options of  onnxruntime
 ort_options = ort.SessionOptions()
