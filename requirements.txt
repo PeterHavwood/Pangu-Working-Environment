@@ -1,0 +1,9 @@
+numpy
+netCDF4
+xarray
+cdsapi
+matplotlib
+cartopy
+scipy
+onnx==1.13.1
+onnxruntime==1.14.0
