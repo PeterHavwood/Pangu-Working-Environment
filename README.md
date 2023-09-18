@@ -38,7 +38,7 @@ pip install -r requirements_cpu.txt
 ```
 
 ## Usage
-To simply try to use Pangu models, you can just change the parameters to controll the inital date and the extent to plot in `parameters.py`, then:
+To simply use Pangu models, you can just change the parameters to controll the inital date and the extent to plot in `parameters.py`, then:
 ```
 python run_model.py
 ```
