@@ -12,7 +12,7 @@ input_time = datetime.datetime(year,month,day,hour)
 
 # Time to forecast in hour
 single_forecast_hour = 24
-forecast_times = 8
+forecast_times = 1
 
 # Extent to plot
 lon_west = 70

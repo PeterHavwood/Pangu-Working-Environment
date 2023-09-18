@@ -36,7 +36,7 @@ else:
     # Run the sessions
     print(f"\n=== Running the inference sessions to forecast ===")
     output_upper_ncfile_name, output_surface_ncfile_name = \
-        run_sessions(input_data_dir, output_data_dir, input_time, ort_sessions, single_forecast_hour, False)
+        run_sessions(input_data_dir, output_data_dir, input_time, ort_sessions, single_forecast_hour, single_forecast_hour, False)
     # Plot the results
     print("\n=== Ploting the figures ===")
     plot_surface_wind_temp(output_surface_ncfile_name, extent, t2m_levels, output_data_dir, single_forecast_hour,  'figure')
