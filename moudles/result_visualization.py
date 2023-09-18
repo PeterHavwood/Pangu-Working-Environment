@@ -8,10 +8,10 @@ import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 from cartopy.mpl.ticker import LongitudeFormatter, LatitudeFormatter
 
-def plot_surface_wind_temp(surface_ncfile_name, extent, t2m_levels, data_path, forecast_time, save_path):
+def plot_surface_wind_temp(surface_ncfile_name, extent, t2m_levels, data_path, forecast_TIME, save_path):
     # Import the data, sort by latitude and choose the range
     surface_ncfile = os.path.join(data_path, surface_ncfile_name)
-    surface_data, file_time = process_surface_data(surface_ncfile, extent)
+    surface_data, file_TIME = process_surface_data(surface_ncfile, extent)
     
     # Create the figure and axis
     proj = ccrs.PlateCarree()
@@ -19,11 +19,11 @@ def plot_surface_wind_temp(surface_ncfile_name, extent, t2m_levels, data_path, f
     ax = fig.add_subplot(111, projection=proj)
     ax_add_feature(ax, feature_scale='50m')
     ax_add_ticks(ax, proj, extent, 'small')
-    if not forecast_time:
+    if not forecast_TIME:
         data_source = " ERA5 data"
     else:
-        data_source = f" From {forecast_time}hr forecast"
-    ax.set_title(file_time+data_source)
+        data_source = f" From {forecast_TIME}hr forecast"
+    ax.set_title(file_TIME+data_source)
 
     # Plot the contour figure of t2m
     cf = ax.contourf(surface_data.longitude,surface_data.latitude,surface_data.t2m, levels=t2m_levels, extend = 'both', cmap='RdYlBu_r')
@@ -43,7 +43,7 @@ def plot_surface_wind_temp(surface_ncfile_name, extent, t2m_levels, data_path, f
         fontproperties={'size': 'x-small'}
     )
     
-    fig_name = file_time + ' surface_wind_temp' + data_source
+    fig_name = file_TIME + ' surface_wind_temp' + data_source
     fig_file = os.path.join(save_path, fig_name)
     fig.savefig(fig_file)
 
@@ -75,9 +75,9 @@ def process_surface_data(surface_ncfile, extent):
         surface_data.t2m.values -= 273.15  # Change the unit of temperature to °C
 
     # Get the time of the file, and then cut the time dimension
-    data_time = surface_data.time[0]
-    data_time_units = surface_data.time.units
-    file_time = str(nc.num2date(data_time, data_time_units))
+    data_TIME = surface_data.time[0]
+    data_TIME_units = surface_data.time.units
+    file_TIME = str(nc.num2date(data_TIME, data_TIME_units))
     surface_data = surface_data.isel(time=0)
 
-    return surface_data, file_time
+    return surface_data, file_TIME

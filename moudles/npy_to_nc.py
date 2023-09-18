@@ -2,7 +2,7 @@ import os
 import numpy as np
 import netCDF4 as nc
 
-def npy2nc_upper(upper_npy, file_time, ncfile_name, save_path):
+def npy2nc_upper(upper_npy, file_TIME, ncfile_name, save_path):
     # Create the new nc file
     upper_nc = nc.Dataset(os.path.join(save_path,ncfile_name), 'w', format='NETCDF4')
 
@@ -27,7 +27,7 @@ def npy2nc_upper(upper_npy, file_time, ncfile_name, save_path):
     upper_nc.variables['longitude'][:]  = np.linspace(0, 359.75, 1440)
     upper_nc.variables['latitude'][:]  = np.linspace(90, -90, 721)
     upper_nc.variables['level'][:]  = np.array([1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, 50])
-    upper_nc.variables['time'][:] = file_time
+    upper_nc.variables['time'][:] = file_TIME
     upper_nc.variables['time'].units = "hours since 1900-01-01 00:00:00.0"
     upper_nc.variables['z'][:]  = upper_npy[0]
     upper_nc.variables['q'][:]  = upper_npy[1]
@@ -37,7 +37,7 @@ def npy2nc_upper(upper_npy, file_time, ncfile_name, save_path):
 
     upper_nc.close()
 
-def npy2nc_surface(surface_npy, file_time, ncfile_name, save_path):
+def npy2nc_surface(surface_npy, file_TIME, ncfile_name, save_path):
     # Create the new nc file
     surface_nc = nc.Dataset(os.path.join(save_path,ncfile_name), 'w', format='NETCDF4')
 
@@ -58,7 +58,7 @@ def npy2nc_surface(surface_npy, file_time, ncfile_name, save_path):
     # Add data to variables
     surface_nc.variables['longitude'][:] = np.arange(0,360,0.25)
     surface_nc.variables['latitude'][:] = np.linspace(90, -90, 721)
-    surface_nc.variables['time'][:] = file_time
+    surface_nc.variables['time'][:] = file_TIME
     surface_nc.variables['time'].units = "hours since 1900-01-01 00:00:00.0"
     surface_nc.variables['msl'][:] = surface_npy[0]
     surface_nc.variables['u10'][:] = surface_npy[1]

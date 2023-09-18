@@ -3,22 +3,22 @@ import onnxruntime as ort
 import numpy as np
 
 # Inital time
-year = 2023
-month = 9
-day = 11
-hour = 0
+year = 2019
+month = 8
+day = 7
+hour = 6
 
-input_time = datetime.datetime(year,month,day,hour)
+input_TIME = datetime.datetime(year,month,day,hour)
 
 # Time to forecast in hour
-single_forecast_hour = 24
-forecast_times = 1
+single_forecast_hour = 6
+forecast_times = 12
 
 # Extent to plot
-lon_west = 70
-lon_east = 150
-lat_south = 10
-lat_north = 60
+lon_west = 110
+lon_east = 130
+lat_south = 20
+lat_north = 30
 
 extent = [lon_west, lon_east, lat_south, lat_north]
 
@@ -28,7 +28,7 @@ t2m_levels = np.linspace(0, 40, 21)
 # The directory of data and figures
 input_data_dir = './data/input_data'
 output_data_dir = './data/output_data'
-figure_dir = './figure/test_9_11'
+figure_dir = './figure/Lekima_19'
 
 # Options of  onnxruntime
 ort_options = ort.SessionOptions()

@@ -3,11 +3,11 @@ import numpy as np
 import os
 from netCDF4 import Dataset
 
-def get_input_npy(input_time, save_path):
-    year = input_time.year
-    month = input_time.month
-    day = input_time.day
-    hour = input_time.hour
+def get_input_npy(input_TIME, save_path):
+    year = input_TIME.year
+    month = input_TIME.month
+    day = input_TIME.day
+    hour = input_TIME.hour
     input_upper_ncfile_name = get_hourly_upper_npy(year, month, day, hour, save_path)
     input_surface_ncfile_name = get_hourly_surface_npy(year, month, day, hour, save_path)
     return input_upper_ncfile_name, input_surface_ncfile_name
