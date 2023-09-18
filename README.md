@@ -6,14 +6,16 @@ This environment can download the input data, run the models for a given time or
 The official repository of Pangu-Weather model is: https://github.com/198808xc/Pangu-Weather/tree/main
 
 ## Installation
-**First** download and install Pangu models from the official repository: https://github.com/198808xc/Pangu-Weather/tree/main
+**First** download Pangu models (Then 4 links below are from the official repository of Pangu-Weather model).
 
-The four onnx models (pangu_weather_*.onnx) is needed. 
+* The 1-hour model (pangu_weather_1.onnx): [Google drive](https://drive.google.com/file/d/1fg5jkiN_5dHzKb-5H9Aw4MOmfILmeY-S/view?usp=share_link)/[Baidu netdisk](https://pan.baidu.com/s/1M7SAigVsCSH8hpw6DE8TDQ?pwd=ie0h)
 
-And run the `requirements_cpu.txt` (which from the official respository):
-```
-pip install -r requirements_cpu.txt
-```
+* The 3-hour model (pangu_weather_3.onnx): [Google drive](https://drive.google.com/file/d/1EdoLlAXqE9iZLt9Ej9i-JW9LTJ9Jtewt/view?usp=share_link)/[Baidu netdisk](https://pan.baidu.com/s/197fZsoiCqZYzKwM7tyRrfg?pwd=gmcl)
+
+* The 6-hour model (pangu_weather_6.onnx): [Google drive](https://drive.google.com/file/d/1a4XTktkZa5GCtjQxDJb_fNaqTAUiEJu4/view?usp=share_link)/[Baidu netdisk](https://pan.baidu.com/s/1q7IB7tNjqIwoGC7KVMPn4w?pwd=vxq3)
+
+* The 24-hour model (pangu_weather_24.onnx): [Google drive](https://drive.google.com/file/d/1lweQlxcn9fG0zKNW8ne1Khr9ehRTI6HP/view?usp=share_link)/[Baidu netdisk](https://pan.baidu.com/s/179q2gkz2BrsOR6g3yfTVQg?pwd=eajy)
+
 
 **Then** you shall download files from this repository, and organize them with the onnx models as the following hierarchy:
 
@@ -36,6 +38,11 @@ pip install -r requirements_cpu.txt
 │   |  ├── work_time.py
 │   ├── run_model.py
 │   ├── parameters.py
+```
+
+Set your python environment, and install all packages required using:
+```
+pip install -r requirements_cpu.txt
 ```
 
 ## Usage
