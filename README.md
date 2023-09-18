@@ -58,7 +58,7 @@ You can find the output data of netCDF format in the directory `/data/output_dat
 * Fix any bug.
 
 ## Code Explaination
-# Other
+### Other
 As there are many variables have 'time' in their names with different meaning, we use different spelling ways to distinguish them:
 * TIME: the time of the data in reality, like 'input_TIME = 2019.09.01 00:00'
 * Time: the time to record how long the program/function has run, like 'program_run_Time = 5min'
