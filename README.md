@@ -33,9 +33,8 @@ The official repository of Pangu-Weather model is: https://github.com/198808xc/P
 │   |  ├── __init__.py
 │   |  ├── era5_download.py
 │   |  ├── inference_session.py
-│   |  ├── npy_to_nc.py
 │   |  ├── result_visualization.py
-│   |  ├── work_time.py
+│   |  ├── ...
 │   ├── run_model.py
 │   ├── parameters.py
 ```
