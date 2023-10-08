@@ -33,9 +33,8 @@ The official repository of Pangu-Weather model is: https://github.com/198808xc/P
 │   |  ├── __init__.py
 │   |  ├── era5_download.py
 │   |  ├── inference_session.py
-│   |  ├── npy_to_nc.py
 │   |  ├── result_visualization.py
-│   |  ├── work_time.py
+│   |  ├── ...
 │   ├── run_model.py
 │   ├── parameters.py
 ```
@@ -45,6 +44,11 @@ Set your python environment, and install all packages required using:
 pip install -r requirements_cpu.txt
 ```
 
+**Note** that to use the `cdsapi` package, you need follow the guide here to get the access to CDS data:
+[How to use the CDS API](https://cds.climate.copernicus.eu/api-how-to)
+
+The step 1 `Install the CDS API key` and step 2 `Install the CDS API client` are needed. And functions in `era5_download.py` will do the donwload for you automatically.
+
 ## Usage
 To simply use Pangu models, you can just change the parameters to controll the inital date and the extent to plot in `parameters.py`, then:
 ```
@@ -53,9 +57,9 @@ python run_model.py
 You can find the output data of netCDF format in the directory `/data/output_data` (you can create your own dirt to save these data), and figures in `/figure` (you can change it as well).
 
 ## Further Expand
-* Add a python program only to plot the results.
 * Add more plot functions.
 * Fix any bug.
+* [DONE] Add a python program only to plot the results.
 
 ## Code Explaination
 #### Other
